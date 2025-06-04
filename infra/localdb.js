@@ -14,7 +14,9 @@ export default class DbInstance {
     };
     this.data.push(data);
 
-    writeLog(`User "${name}" was created;`);
+    const dateCreated = new Date().toUTCString();
+
+    writeLog(`User "${name}" was created in ${dateCreated}`);
   }
 
   findUser(email) {
