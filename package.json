@@ -1,0 +1,15 @@
+{
+  "name": "explore-fs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Explore File System module in Node.js and hooks in Fastify",
+  "main": "test.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.3.3"
+  }
+}
