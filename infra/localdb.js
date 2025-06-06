@@ -1,6 +1,6 @@
 import { writeLog, readLog } from "./logs_registrator.js";
 
-export default class DbInstance {
+class DbInstance {
   qtusers = 0;
   data = [];
 
@@ -34,3 +34,6 @@ export default class DbInstance {
     console.log(this.data);
   }
 }
+
+const localdb = new DbInstance();
+export { localdb };
