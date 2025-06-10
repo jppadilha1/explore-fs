@@ -2,17 +2,16 @@ import { writeLog, readLog } from "./logs_registrator.js";
 
 class DbInstance {
   qtusers = 0;
-  data = [];
+  data = new Map();
 
   create(name, email) {
     this.qtusers += 1;
 
     const data = {
-      id: this.qtusers,
       name: name,
       email: email,
     };
-    this.data.push(data);
+    this.data.set(email, data);
 
     const dateCreated = new Date().toUTCString();
 
@@ -20,14 +19,7 @@ class DbInstance {
   }
 
   findUser(email) {
-    this.data.forEach((user) => {
-      if (user.email == email) {
-        return user;
-      } else {
-        console.log("User doesn't exist");
-        return;
-      }
-    });
+    return this.data.get(email);
   }
 
   read() {
