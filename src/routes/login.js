@@ -5,11 +5,12 @@ export function loginUser(app) {
     const { email } = req.body;
 
     const user = localdb.findUser(email);
+    const token = "token";
 
     if (!user) {
       return reply.status(500).send("User undefined");
     } else {
-      return reply.status(200).send(user);
+      return reply.status(200).send(token);
     }
   });
 }
