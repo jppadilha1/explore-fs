@@ -2,6 +2,11 @@ import Fastify from "fastify";
 import { registerUser } from "./routes/register.js";
 import { loginUser } from "./routes/login.js";
 import { exampleHook } from "./routes/example.js";
+import dotenv from "dotenv";
+
+dotenv.config({
+  path: ".env",
+});
 
 const app = Fastify();
 
